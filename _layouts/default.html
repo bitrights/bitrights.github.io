@@ -5,29 +5,32 @@
   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 
+{% capture lvl %}{{ page.url | append:'index.html' | split:'/' | size }}{% endcapture %}
+{% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+
 <html>
   <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <title>{{ relative }} {% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }} </title>
     <!-- <title>Bitrights - Era of the bit</title> -->
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="{{ site.name }}" />
     <meta name="description" content="{{ site.description }}">
-    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.scrolly.min.js"></script>
-    <script src="js/skel.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/custom.js"></script>
+    <!--[if lte IE 8]><script src="{{ relative }}/css/ie/html5shiv.js"></script><![endif]-->
+    <script src="{{ relative }}js/jquery.min.js"></script>
+    <script src="{{ relative }}js/jquery.scrolly.min.js"></script>
+    <script src="{{ relative }}js/skel.min.js"></script>
+    <script src="{{ relative }}js/init.js"></script>
+    <script src="{{ relative }}js/custom.js"></script>
     <noscript>
-      <link rel="stylesheet" href="css/skel.css" />
-      <link rel="stylesheet" href="css/style.css" />
-      <link rel="stylesheet" href="css/style-desktop.css" />
-      <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+      <link rel="stylesheet" href="{{ relative }}css/skel.css" />
+      <link rel="stylesheet" href="{{ relative }}css/style.css" />
+      <link rel="stylesheet" href="{{ relative }}css/style-desktop.css" />
+      <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ relative }}/feed.xml" />
     </noscript>
-    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="{{ relative }}css/ie/v8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="{{ relative }}css/ie/v9.css" /><![endif]-->
   </head>
   <body>
 
@@ -38,10 +41,10 @@
           <li><a href="#plans">Vision</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="navtop" href="labs.html">Labs</a></li>
-          <li><a class="navtop" href="bp.html">Best-Practices</a></li>
-          <li><a class="navtop" href="access.html">Accessibility</a></li>
-          <li><a class="navtop" href="review.html">RW</a></li>
+          <li><a class="navtop" href="http://bitrights.org/labs.html">Labs</a></li>
+          <li><a class="navtop" href="http://bitrights.org/bp.html">Best-Practices</a></li>
+          <li><a class="navtop" href="http://bitrights.org/access.html">Accessibility</a></li>
+          <li><a class="navtop" href="http://bitrights.org/review.html">RW</a></li>
           <li><a class="navtop" href="http://io.bitrights.org">I/O</a></li>
           <li><a href="{{ site.baseurl }}/archive">Archive</a></li>
         </ul>
